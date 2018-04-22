@@ -26,20 +26,11 @@ Open Power Hub envisions a design able to inform, enable, and empower users and 
 
 ## Overview
 
-With these high challenges in the industry, PD OmnitTool envisons a flexible & enduring architecture for interconnecting DC & USB Power Delivery devices in a radically-flexible forward-spec-compatible way. The PD OmniTool ties a number of ports (6 in the reference design: 4 USB-C and 2 DC) onto three switchable buses: a power providing input bus, and two variable voltage output buses. High speed data pass-through capabilities are provided to allow expected data-connection operations to continue independent of power transfer operations. Software defined architecture insures radical forward compatibility unmatched by off-the-shelf USB Power Delivery Controllers, and is a key part of allowing individual ports maximal on the fly reconfigurability, switching betwen input & output modes & various operating voltage regimes.
+With these high challenges in the industry, PD OmnitTool envisons a flexible & enduring architecture for interconnecting DC & USB Power Delivery devices in a radically-flexible (via hardware architecture) forward-spec-compatible (via uniquely software defined implementation) way. The PD OmniTool ties a number of ports (6 in the reference design: 4 USB-C and 2 DC) together, flexibly switching ports onto any of three switchable buses: a power providing input bus, and two variable voltage output buses. High speed data pass-through capabilities are provided to allow expected data-connection operations to continue independent of power transfer operations. Software defined architecture insures radical forward compatibility & manipulability unmatchable by off-the-shelf USB Power Delivery Controller chips.
 
-The PD OmniTool should, for many users, serve as an adequate multi-device charging hub, powered by a wall wart device potentially of high power. However the OmniTool's flexible architecture means it should be suitable for a far wider range of sophisticated power operations. Via the boost-buck power conversion core and fine software control, it should be a capable off the grid power nexus, able to use an attached battery bank and solar panel to power devices, sending excess power to the batteries (at current-controlled rate), or drawing from the batteries when solar is insufficient. Attaching a USB-C power bank to this system ought allow negotiated power draw on the wall charger to insure the full charge rate regardless of solar conditions.
+The PD OmniTool should, for many users, serve as an adequate multi-device charging hub, powered by a high power wall wart device (design aims for at least 30V 10A). However the OmniTool's flexible architecture means it should be suitable for a far wider range of sophisticated power operations, suitable in across a huge variety of uses. In off-the-grid situations it ought be a capable solar & battery anchored hub, powering devices while charging or discharging batteries. In maker/electronics usage, it ought be capable of performing voltage or current controlled output to any of it's ports (either as spec permits or manually setting port output, ignoring USB Power Delivery protocols).
 
-
-
-
-
-
-
-
-This design allows for negotiating power-providing devices to be sourced to provide a variety of power outputs, while keeping design size and cost relatiely limited.
-
-Although data is not the primary consideration of this product, one dedicated "master" USB port is assigned, that provides full high-speed pass-through that can be switched between one of two other ports. This allows a laptop to connect to a flash drive or display or other example device, while taking advantage of the power hub. 
+Although data is not the primary consideration of this product, one dedicated "master" USB port is assigned, that provides full high-speed pass-through that can be switched between one of two other ports. This allows a laptop to connect to a flash drive or alt-mode display or other example device, while taking advantage of the power hub.
 
 ## Specifications
 
