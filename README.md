@@ -5,7 +5,7 @@ Draft, April 23rd 2018
 
 USB-C's arrival begins a new wave of perhipheral connectivity for computer users, one that grants devices the flexibility to send or receive power to what they are connected to. Thusfar, the use-cases permitted seem to be largely limited to two basic scenarios: a device plugged in to a wall charger or battery unit, or a device transfering power to another device.
 
-The Power Delivery OmniTool design proposed here aims to pioneer a drastically more open frontier for moving managing and monitoring power & transfer across multiple devices, both as a completely software-defined forward-specification-compatible richly-informative practical hub device with whichto connect a variety of devices & power systems, and as a scalable, flexible reference design for talking to USB Power Delivery devices.
+The Power Delivery OmniTool design proposed here aims to pioneer a drastically more open frontier for moving managing and monitoring power & transfer across multiple devices, both as a completely software-defined forward-specification-compatible richly-informative practical hub device with whichto connect a variety of devices & power systems, and as a scalable, flexible reference design for talking to USB Power Delivery devices. If successful, the PD OmniTool will serve as a ductile, future-proof huband charging solution for power providing & consumingdevices, & will give future makers a tool & means to reproduce their own spin-offs & experiments with USB Power Delivery & power conversion.
 
 # The Challenges of Power Delivery Today
 
