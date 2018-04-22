@@ -2,7 +2,7 @@
 
 USB-C is a new wave of perhipheral connectivity for computer users. At the start of this very important new chapter for computing, the Flexible Powered Software Defined USB-C Hub (FPSDUCH) provides a highly flexible USB Power Delivery system and adequate data-through connectivity to present a novel, adaptable, compelling open source hardware design that gives users ongoing flexibility to adapt to, manipulate, & enrich themselves across the emerging USB-C technical ecosystem.
 
-# The Challenge
+# The Challenges of Power Delivery Today
 
 USB-C and USB Power Delivery permits bidirectional power transit, yet few options exist to be able to route power around in USB effectively. Currently users rely on re-plugging laptops, phones, and wall chargers making dedicated, 1:1 connections with each other. In an age when the one connector can bring power and high speed data, users are limited to inflexible single purpose charging solutions. Even the most basic needs are not met in the Power Delivery ecosystem: there are presently no multi-device charging systems available! Yet users should be able to expect connecting a variety of their devices and battery backs, & the freedom to shuffle power across them.
 
@@ -17,10 +17,51 @@ These three factors express the desire and need for the Open Power Hub:
 
 Open Power Hub envisions a design able to inform, enable, and empower users and makers about the full range of interesting, sophisiticated capabilities that Power Delivery grants, while creating a practical, ridiculously flexible hub device.
 
-# Open Source Power Delivery
+# Flexible Open Source Power Delivery - Ports and Rails
+
+## Overview
+
+With these lofty goals, Open Power Hub envisons a flexible power bus based architecture. The Power Power Hub ties together a number of ports (6 in the reference design: 4 USB-C and 2 DC) via switchable connection to three main power buses: a power providing input bus, and two variable power output buses. The unified input bus powers each output bus via a boost-buck converter.
+
+This design allows for negotiating power-providing devices to be sourced to provide a variety of power outputs, while keeping design size and cost relatiely limited.
+
+Although data is not the primary consideration of this product, one dedicated "master" USB port is assigned, that provides full high-speed pass-through that can be switched between one of two other ports. This allows a laptop to connect to a flash drive or display or other example device, while taking advantage of the power hub. 
+
+## Specifications
+
+* fully able to support up to 30V connections
+* 2 DC ports, for battery, wall, or solar connections
+* 4 USB-C ports
+* USB "master" with 
+
+## Ports
+
+Each port follows a repeatable architecture, primarily concerning a series of load switches to connect or disconnect it from various buses, and a monitoring chip to observe port behavior.
+
+### Analog CC
+
+USB-C ports have additional circuitry required to negotiate their status with the connected device, across the Configuration Channel wire of the USB-C port.
+
+On USB-C ports, an analog front-end PHY design is put in place to interface with the Configuration Channels (CC) used to negotiate USB Power Delivery status. This insures forward-compatibility. For example Power Delivery 3.0 was recently introduced, vastly expanding the variety of messages devices can communicate. Because the 
+
+### Load switches
+
+Load-switches are used in this design extensively. Each port needs to be able to switch a high power 
+
+## Rails
+
+Inside the design, two buck-boost converters provide for flexible power conversion from the input bus to the desired bus status. Two buses are provided to allow for some flexibility- perhaps some devices can only charge at 9V while other devices would like to be able to charge 20V. Or perhaps one bus could be connected to a DC port, and on the fly adjusted so as to provide current-mode charging to a battery pack.
 
 ## Repeatable Port and Bus-bar Architecture
 The Open Power Hub design envisions a single repeatable tile of a single USB-C "port", connected to two high power internal bus bars.
+
+
+
+# Alternative And Enhancements Discussion
+
+## Per Port Buck
+
+## Data Hub
 
 # Writing guide
 
