@@ -1,6 +1,11 @@
-# Open Power Hub - Software Defined Flexible Power Routing USB-C Hub
+# PD OmniTool - Software Defined Flexible Power Routing USB-C Hub
 
-USB-C is a new wave of perhipheral connectivity for computer users. At the start of this very important new chapter for computing, the Flexible Powered Software Defined USB-C Hub (FPSDUCH) provides a highly flexible USB Power Delivery system and adequate data-through connectivity to present a novel, adaptable, compelling open source hardware design that gives users ongoing flexibility to adapt to, manipulate, & enrich themselves across the emerging USB-C technical ecosystem.
+By Jaunty Wunderkind <jaunty+wunder+kind+openpowerhuhb@eldergods.com>
+Draft, April 23rd 2018
+
+USB-C's arrival begins a new wave of perhipheral connectivity for computer users, one that grants devices the flexibility to send or receive power to what they are connected to. Thusfar, the use-cases permitted seem to be largely limited to two basic scenarios: a device plugged in to a wall charger or battery unit, or a device transfering power to another device.
+
+The Power Delivery OmniTool design proposed here aims to pioneer a drastically more open frontier for moving managing and monitoring power & transfer across multiple devices, both as a completely software-defined forward-specification-compatible richly-informative practical hub device with whichto connect a variety of devices & power systems, and as a scalable, flexible reference design for talking to USB Power Delivery devices.
 
 # The Challenges of Power Delivery Today
 
@@ -17,11 +22,20 @@ These three factors express the desire and need for the Open Power Hub:
 
 Open Power Hub envisions a design able to inform, enable, and empower users and makers about the full range of interesting, sophisiticated capabilities that Power Delivery grants, while creating a practical, ridiculously flexible hub device.
 
-# Flexible Open Source Power Delivery - Ports and Rails
+# Power Delivery OmniTool - Flexible Power Routing
 
 ## Overview
 
-With these lofty goals, Open Power Hub envisons a flexible power bus based architecture. The Power Power Hub ties together a number of ports (6 in the reference design: 4 USB-C and 2 DC) via switchable connection to three main power buses: a power providing input bus, and two variable power output buses. The unified input bus powers each output bus via a boost-buck converter.
+With these high challenges in the industry, PD OmnitTool envisons a flexible & enduring architecture for interconnecting DC & USB Power Delivery devices in a radically-flexible forward-spec-compatible way. The PD OmniTool ties a number of ports (6 in the reference design: 4 USB-C and 2 DC) onto three switchable buses: a power providing input bus, and two variable voltage output buses. High speed data pass-through capabilities are provided to allow expected data-connection operations to continue independent of power transfer operations. Software defined architecture insures radical forward compatibility unmatched by off-the-shelf USB Power Delivery Controllers, and is a key part of allowing individual ports maximal on the fly reconfigurability, switching betwen input & output modes & various operating voltage regimes.
+
+The PD OmniTool should, for many users, serve as an adequate multi-device charging hub, powered by a wall wart device potentially of high power. However the OmniTool's flexible architecture means it should be suitable for a far wider range of sophisticated power operations. Via the boost-buck power conversion core and fine software control, it should be a capable off the grid power nexus, able to use an attached battery bank and solar panel to power devices, sending excess power to the batteries (at current-controlled rate), or drawing from the batteries when solar is insufficient. Attaching a USB-C power bank to this system ought allow negotiated power draw on the wall charger to insure the full charge rate regardless of solar conditions.
+
+
+
+
+
+
+
 
 This design allows for negotiating power-providing devices to be sourced to provide a variety of power outputs, while keeping design size and cost relatiely limited.
 
@@ -83,3 +97,10 @@ https://medium.com/@cramforce/design-docs-a-design-doc-a152f4484c6b
 4. Explain the reasoning behind those decisions and tradeoffs made in that decisions
 5. List alternative designs and why they were not chosen
 6. Support future maintainers and other interested parties in understanding why the original design was chosen
+
+1. meta-information
+2. context, scope, goals
+3. overview
+4. detailed design
+5. coss-cutting concerns
+6. alternatives
