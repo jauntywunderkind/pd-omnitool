@@ -1,4 +1,4 @@
-# PD OmniTool - Software Defined Flexible Power Routing USB-C Hub
+# PD OmniTool - Software Defined Flexible Power Routing USB-C + DC Hub
 
 By Jaunty Wunderkind <jaunty+wunder+kind+openpowerhuhb@eldergods.com>
 Draft, April 23rd 2018
@@ -6,6 +6,28 @@ Draft, April 23rd 2018
 USB-C's arrival begins a new wave of perhipheral connectivity for computer users, one that grants devices the flexibility to send or receive power to what they are connected to. Thusfar, the use-cases permitted seem to be largely limited to two basic scenarios: a device plugged in to a wall charger or battery unit, or a device transfering power to another device.
 
 The Power Delivery OmniTool design proposed here aims to pioneer a drastically more open frontier for moving managing and monitoring power & transfer across multiple devices, both as a completely software-defined forward-specification-compatible richly-informative practical hub device with whichto connect a variety of devices & power systems, and as a scalable, flexible reference design for talking to USB Power Delivery devices. If successful, the PD OmniTool will serve as a ductile, future-proof huband charging solution for power providing & consumingdevices, & will give future makers a tool & means to reproduce their own spin-offs & experiments with USB Power Delivery & power conversion.
+
+# TOC
+
+* [PD OmniTool - Software Defined Flexible Power Routing USB-C   DC Hub](#pd-omnitool---software-defined-flexible-power-routing-usb-c--dc-hub)
+* [The Challenges of Power Delivery Today](#the-challenges-of-power-delivery-today)
+* [Power Delivery OmniTool - Flexible Power Routing](#power-delivery-omnitool---flexible-power-routing)
+   * [Overview](#overview)
+   * [Specifications](#specifications)
+* [Design](#design)
+   * [Ports](#ports)
+      * [Analog CC](#analog-cc)
+      * [Load switches](#load-switches)
+   * [Rails](#rails)
+   * [Repeatable Port and Bus-bar Architecture](#repeatable-port-and-bus-bar-architecture)
+* [Alternative And Enhancements Discussion](#alternative-and-enhancements-discussion)
+   * [Per Port Buck](#per-port-buck)
+   * [Data Hub](#data-hub)
+* [Writing guide](#writing-guide)
+   * [Open Hardware Design Challenge](#open-hardware-design-challenge)
+   * [Design docs](#design-docs)
+
+
 
 # The Challenges of Power Delivery Today
 
@@ -34,10 +56,21 @@ Although data is not the primary consideration of this product, one dedicated "m
 
 ## Specifications
 
-* fully able to support up to 30V connections
-* 2 DC ports, for battery, wall, or solar connections
-* 4 USB-C ports
-* USB "master" with 
+* fully able to support up to 30V minimum from inputs
+* draw of 10A minimum on input
+* 2 high efficiency boost-buck DC DC converters powering 2 independent bus rails
+* 4 USB-C ports, each with complete Configuration Channel (CC) analog front-end (AFE) phy
+  * cc phy allows software-defined negotiation of USB-PD, including PD 3.0 & (likely) beyond
+  * one port is designated the "primary" port, & can data-pass through to one of two other usb-c ports
+* 2 DC ports, for battery, wall, solar, or other electronics (eg: motor, or led drive) connections
+* All ports able to switch between power consuming, and power providing roles (on any power bus)
+* USB "master" whose high-speed connections passes-through to one of two other connected devices
+* extensive voltage/current monitoring throughout
+* Indeterminate "brains" - perhaps a small ARM core, or a common interface (Adafruit Feather, Pi Zero), or perhaps an onboard very low power ICE40 fpga.
+
+# Design
+
+The PD OmniTool 
 
 ## Ports
 
@@ -71,7 +104,8 @@ The Open Power Hub design envisions a single repeatable tile of a single USB-C "
 # Writing guide
 
 ## Open Hardware Design Challenge
-https://hackaday.io/prize/details#one
+
+[This](https://hackaday.io/prize/details#one) is the official prompt for the Open Hardware Design Challenge competition this document is pursuing.
 
 1. Discuss the challenge the project addresses
 2. Discuss how hte project will alleviate or solve the problem that the project addresses
@@ -81,13 +115,17 @@ https://hackaday.io/prize/details#one
 6. Submit the Project to 2018 Hackaday Prize using the "Submit projet to" option.
 
 ## Design docs
-https://medium.com/@cramforce/design-docs-a-design-doc-a152f4484c6b
+
+[Malte Ubl's Design Docs - A Design Doc](https://medium.com/@cramforce/design-docs-a-design-doc-a152f4484c6b) outlines a number of characteristics a design doc (generally for software but used here too) ought accomplish. This is taken as significant guidance in the writing of the PD OmniTool design document.
+
 1. Document the software design
 2. Clarify the problem being solved
 3. Act as a discussion platform to further refine the design
 4. Explain the reasoning behind those decisions and tradeoffs made in that decisions
 5. List alternative designs and why they were not chosen
 6. Support future maintainers and other interested parties in understanding why the original design was chosen
+
+Steps of a design doc:
 
 1. meta-information
 2. context, scope, goals
