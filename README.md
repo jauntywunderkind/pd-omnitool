@@ -1,6 +1,6 @@
 # PD OmniTool - Software Defined Flexible Power Routing USB-C + DC Hub
 
-By Jaunty Wunderkind <jaunty+wunder+kind+openpowerhuhb@eldergods.com>
+By Jaunty Wunderkind <jaunty+wunder+kind+openpowerhuhb@eldergods.com>  
 Draft, April 23rd 2018
 
 USB-C's arrival begins a new wave of perhipheral connectivity for computer users, one that grants devices the flexibility to send or receive power to what they are connected to. Thusfar, the use-cases permitted seem to be largely limited to two basic scenarios: a device plugged in to a wall charger or battery unit, or a device transfering power to another device.
