@@ -196,6 +196,16 @@ Given far more resources, it would be fun to consider an altogether more flexibl
 
 Candidate parts: [NXP CBTL08GP053 Type-C Crossbar](https://www.nxp.com/products/analog/interfaces/usb-interfaces/usb-type-c-true-plugn-play/high-speed-signal-switches/usb-type-c-high-performance-crossbar-switch-ic:CBTL08GP053EV)
 
+# Licenses
+
+All software is & will remain available under a MIT license,  
+All hardware is & will remain available under a CERN Open Hardware License.
+
+If an FPGA is used, the Yosys suite will be used & is licensed ISC.  
+If a microcontroller is used, Zephyr OS will be used & is licensed Apache License 2.0.
+
+No further 3rd party licenses are expected to used.
+
 # Appendix - Writing Guide
 
 This section includes reference material used to aid in the preparation of this design.
